@@ -8,6 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
+	<properties/>
 
 	<artifactId>yami-shop-api</artifactId>
 	<packaging>jar</packaging>
@@ -28,6 +29,7 @@
 			<artifactId>yami-shop-mp</artifactId>
 			<version>${yami.shop.version}</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -36,6 +38,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot.version}</version>
+				<configuration>
+                    <mainClass>
+						com.yami.shop.api.ApiApplication
+					</mainClass>
+				</configuration>
+
 				<executions>
 					<execution>
 						<goals>

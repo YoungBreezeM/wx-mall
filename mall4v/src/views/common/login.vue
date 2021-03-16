@@ -2,8 +2,7 @@
   <div class="login">
     <div class="login-box">
       <div class="top">
-        <div class="logo"><img src="~@/assets/img/login-logo.png"
-               alt=""></div>
+        <h1>农乐购后台管理系统</h1>
       </div>
       <div class="mid">
         <el-form :model="dataForm"
@@ -45,7 +44,7 @@
         </el-form>
       </div>
 
-      <div class="bottom">Copyright © 2019 广州亚米科技有限公司</div>
+      <div class="bottom">Copyright © Vue</div>
     </div>
   </div>
 </template>

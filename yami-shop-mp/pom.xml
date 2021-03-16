@@ -18,4 +18,5 @@
 			<version>${yami.shop.version}</version>
 		</dependency>
 	</dependencies>
+
 </project>

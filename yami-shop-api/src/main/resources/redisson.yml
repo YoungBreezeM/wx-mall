@@ -2,7 +2,7 @@
 singleServerConfig:
   address: redis://127.0.0.1:6379
   database: 0
-  password: 123456
+  password: yqffqy
   idleConnectionTimeout: 10000
   pingTimeout: 1000
   connectTimeout: 10000
