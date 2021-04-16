@@ -78,7 +78,7 @@
         from
         tz_prod_comm pc
         left join tz_user u on u.user_id=pc.user_id
-        where pc.prod_id = #{prodId} and (pc.status = 1 or pc.user_id = #{userId} )
+        where pc.prod_id = #{prodId} and pc.status = 1
         <if test="evaluate != -1 and evaluate != 3">
             and pc.evaluate = #{evaluate}
         </if>

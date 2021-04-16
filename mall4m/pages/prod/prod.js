@@ -199,7 +199,7 @@ Page({
       callBack: (res) => {
         res.records.forEach(item => {
           if (item.pics) {
-            item.pics = item.pics.split(',')
+            item.pics =JSON.parse(item.pics)
           }
         })
         let records = this.data.prodCommPage.records

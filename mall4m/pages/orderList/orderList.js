@@ -124,6 +124,13 @@ Page({
 
   },
 
+/**跳转评价 */
+  toComment(e){
+    console.log(e)
+    wx.navigateTo({
+      url: '/pages/comment/index?orderNum=' +e.currentTarget.dataset.ordernum
+    })
+  },
 
   /**
    * 查看物流

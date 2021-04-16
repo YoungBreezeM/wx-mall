@@ -67,7 +67,8 @@ public class ProdCommController {
     @GetMapping("/info/{prodCommId}" )
     @PreAuthorize("@pms.hasPermission('prod:prodComm:info')" )
     public ResponseEntity<ProdComm> getById(@PathVariable("prodCommId" ) Long prodCommId) {
-        return ResponseEntity.ok(prodCommService.getById(prodCommId));
+        ProdComm byId = prodCommService.getById(prodCommId);
+        return ResponseEntity.ok(byId);
     }
 
     /**

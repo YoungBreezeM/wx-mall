@@ -83,9 +83,9 @@ Page({
     wx.getSetting({
       success(res) {
         if (!res.authSetting['scope.userInfo']) {
-          wx.navigateTo({
-            url: '/pages/login/login',
-          })
+          // wx.navigateTo({
+          //   url: '/pages/login/login',
+          // })
         }
       }
     })

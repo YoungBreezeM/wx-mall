@@ -91,6 +91,8 @@ public class MyOrderController {
         List<OrderItem> orderItems = orderItemService.getOrderItemsByOrderNumber(orderNumber);
         List<OrderItemDto> orderItemDtos = mapperFacade.mapAsList(orderItems, OrderItemDto.class);
 
+
+        orderShopDto.setOrderItemId(orderItems.get(0).getOrderItemId());
         orderShopDto.setShopId(shopDetail.getShopId());
         orderShopDto.setShopName(shopDetail.getShopName());
         orderShopDto.setActualTotal(order.getActualTotal());
@@ -176,7 +178,7 @@ public class MyOrderController {
         List<OrderItem> orderItems = orderItemService.getOrderItemsByOrderNumber(orderNumber);
         order.setOrderItems(orderItems);
         // 确认收货
-        orderService.confirmOrder(Arrays.asList(order));
+        orderService.confirmOrder(Arrays.asList(order),4);
 
         for (OrderItem orderItem : orderItems) {
             productService.removeProductCacheByProdId(orderItem.getProdId());

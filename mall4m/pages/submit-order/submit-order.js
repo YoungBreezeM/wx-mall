@@ -167,7 +167,7 @@ Page({
       mask: true
     });
     var params = {
-      url: "/p/order/pay",
+      url: "/p/order/normalPay",
       method: "POST",
       data: {
         payType: 1,
@@ -189,7 +189,7 @@ Page({
           },
           fail: err => {
             wx.navigateTo({
-              url: '/pages/pay-result/pay-result?sts=0&orderNumbers=' + orderNumbers + "&orderType=" + this.data.orderType,
+              url: '/pages/pay-result/pay-result?sts=1&orderNumbers=' + orderNumbers + "&orderType=" +1,
             })
           }
         })

@@ -91,7 +91,7 @@ public class ProdComm implements Serializable{
     /**
      * 晒图的字符串 以逗号分隔
      */
-    @JsonSerialize(using = ImgJsonSerializer.class)
+//    @JsonSerialize(using = ImgJsonSerializer.class)
     private String pics;
     /**
      * 是否匿名(1:是  0:否)

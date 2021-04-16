@@ -45,7 +45,7 @@ public interface OrderService extends IService<Order> {
 
     void cancelOrders(List<Order> orders);
 
-    void confirmOrder(List<Order> orders);
+    void confirmOrder(List<Order> orders,Integer status);
 
     List<Order> listOrdersDetialByOrder(Order order, Date startTime, Date endTime);
 

@@ -81,7 +81,7 @@ public class ProdCommDto {
     /**
      * 评论图片
      */
-    @JsonSerialize(using = ImgJsonSerializer.class)
+    //@JsonSerialize(using = ImgJsonSerializer.class)
     @ApiModelProperty(value = "评论图片")
     private String pics;
 

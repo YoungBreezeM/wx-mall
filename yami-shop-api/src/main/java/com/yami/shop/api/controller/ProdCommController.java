@@ -12,6 +12,7 @@ package com.yami.shop.api.controller;
 
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.yami.shop.bean.model.Order;
 import com.yami.shop.common.util.PageParam;
 import com.yami.shop.bean.app.dto.ProdCommDataDto;
 import com.yami.shop.bean.app.dto.ProdCommDto;
@@ -20,6 +21,8 @@ import com.yami.shop.bean.model.ProdComm;
 import com.yami.shop.common.util.Json;
 import com.yami.shop.common.util.PageParam;
 import com.yami.shop.security.util.SecurityUtils;
+import com.yami.shop.service.OrderItemService;
+import com.yami.shop.service.OrderService;
 import com.yami.shop.service.ProdCommService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -27,8 +30,12 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 
 @RestController
@@ -38,6 +45,7 @@ import java.util.Date;
 public class ProdCommController {
 
     private final ProdCommService prodCommService;
+    private final OrderService orderService;
 
 
     @GetMapping("/prodCommData")
@@ -63,8 +71,9 @@ public class ProdCommController {
     }
 
     @PostMapping
+    @Transactional
     @ApiOperation(value = "添加评论")
-    public ResponseEntity<Void> saveProdCommPage(ProdCommParam prodCommParam) {
+    public ResponseEntity<Void> saveProdCommPage(@Valid @RequestBody ProdCommParam prodCommParam) {
         ProdComm prodComm = new ProdComm();
         prodComm.setProdId(prodCommParam.getProdId());
         prodComm.setOrderItemId(prodCommParam.getOrderItemId());
@@ -77,6 +86,9 @@ public class ProdCommController {
         prodComm.setStatus(0);
         prodComm.setEvaluate(prodCommParam.getEvaluate());
         prodCommService.save(prodComm);
+        //更改订单状态为完成
+        Order order = orderService.getOrderByOrderNumber(prodCommParam.getOrderNumber());
+        orderService.confirmOrder(Collections.singletonList(order),5);
         return ResponseEntity.ok().build();
     }
 

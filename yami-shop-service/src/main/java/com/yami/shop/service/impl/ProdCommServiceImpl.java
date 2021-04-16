@@ -59,7 +59,7 @@ public class ProdCommServiceImpl extends ServiceImpl<ProdCommMapper, ProdComm> i
         prodCommDtos.getRecords().forEach(prodCommDto -> {
             // 匿名评价
             if (prodCommDto.getIsAnonymous() == 1) {
-                prodCommDto.setNickName(null);
+                prodCommDto.setNickName("匿名");
             }
         });
         return prodCommDtos;

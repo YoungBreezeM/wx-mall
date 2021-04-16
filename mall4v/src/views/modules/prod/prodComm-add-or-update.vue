@@ -18,14 +18,15 @@
 
         <el-form-item label="评论图片"
                       prop="userName">
-          <div v-if="dataForm.pics==null || dataForm.pics.length>0">
+          <div v-if="dataForm.pics==null">
             无
           </div>
           <img max-width="100%"
+               height="100px"
                v-else
                v-for="item in dataForm.pics"
                :key="item"
-               :src="dialogImageUrl + item">
+               :src="item">
         </el-form-item>
 
         <el-form-item label="记录时间"
@@ -132,7 +133,10 @@ export default {
             method: 'get',
             params: this.$http.adornParams()
           }).then(({ data }) => {
-            this.dataForm = data
+
+            data.pics = JSON.parse(data.pics)
+            this.dataForm = data;
+            console.log(this.dataForm)
           })
         }
       })
@@ -140,6 +144,7 @@ export default {
     // 表单提交
     dataFormSubmit () {
       this.$refs['dataForm'].validate((valid) => {
+        this.dataForm.pics = JSON.stringify(this.dataForm.pics)
         if (valid) {
           this.$http({
             url: this.$http.adornUrl('/prod/prodComm'),

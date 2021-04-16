@@ -27,6 +27,12 @@ public class ProdCommParam {
      */
     @ApiModelProperty(value = "商品id")
     private Long prodId;
+
+    /**
+     * 订单号
+     */
+    @ApiModelProperty(value = "订单好")
+    private String orderNumber;
     /**
      * 订单项ID
      */

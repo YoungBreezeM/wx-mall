@@ -42,6 +42,12 @@
           <text>待收货</text>
           <text class='num-badge' wx:if="{{orderAmount.consignment>0}}">{{orderAmount.consignment}}</text>
         </view>
+        <view class='items' bindtap='toOrderListPage' data-sts="4">
+         <text class='num-badge' wx:if="{{orderAmount.confirm>0}}">{{orderAmount.confirm}}
+         </text>
+          <image src='../../images/icon/toComment.png'></image>
+          <text>待评价</text>
+        </view>
         <view class='items' bindtap='toOrderListPage' data-sts="5">
           <image src='../../images/icon/toComment.png'></image>
           <text>已完成</text>
@@ -50,11 +56,8 @@
     </view>
     <!--end 订单状态 -->
 
-    <view class="prod-col">
-      <view class="col-item" bindtap='myCollectionHandle'>
-        <view class="num">{{collectionCount}}</view>
-        <view class="tit">我的收藏</view>
-      </view>
+    <!-- <view class="prod-col">
+      
       <view class="col-item">
         <view class="num">5</view>
         <view class="tit">我的消息</view>
@@ -63,34 +66,41 @@
         <view class="num">3</view>
         <view class="tit">我的足迹</view>
       </view>
-    </view>
+    </view> -->
 
     <view class='my-menu'>
-      <view class='memu-item' bindtap='toDistCenter'>
+      <!-- <view class='memu-item' bindtap='toDistCenter'>
         <view class="i-name">
           <image src='../../images/icon/promotion.png'></image>
           <text>分销中心</text>
         </view>
         <view class='arrowhead'></view>
-      </view>
-      <view class='memu-item' bindtap='toCouponCenter'>
+      </view> -->
+      <!-- <view class='memu-item' bindtap='toCouponCenter'>
         <view class="i-name">
           <image src='../../images/icon/getCoupon.png'></image>
           <text>领券中心</text>
         </view>
         <view class='arrowhead'></view>
-      </view>
-      <view class='memu-item' bindtap='toMyCouponPage'>
+      </view> -->
+      <!-- <view class='memu-item' bindtap='toMyCouponPage'>
         <view class="i-name">
           <image src='../../images/icon/myCoupon.png'></image>
           <text>我的优惠券</text>
         </view>
         <view class='arrowhead'></view>
-      </view>
+      </view> -->
       <view class='memu-item' bindtap='toAddressList'>
         <view class="i-name">
           <image src='../../images/icon/myAddr.png'></image>
           <text>收货地址</text>
+        </view>
+        <view class='arrowhead'></view>
+      </view>
+      <view class="memu-item'" bindtap='myCollectionHandle'>
+        <view class="i-name">
+          <image src='../../images/icon/getCoupon.png'></image>
+          <text>我的收藏</text>
         </view>
         <view class='arrowhead'></view>
       </view>

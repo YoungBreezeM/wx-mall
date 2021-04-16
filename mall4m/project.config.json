@@ -9,12 +9,28 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"nodeModules": false,
+		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
-		"checkInvalidKey": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"packNpmManually": true,
+		"packNpmRelationList": [
+			{
+				"packageJsonPath": "./package.json",
+				"miniprogramNpmDistDir": "./miniprogram/"
+			}
+		],
+		"enhance": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.4",
+	"libVersion": "2.16.0",
 	"appid": "wx068042f058d845db",
 	"projectname": "%E4%BA%9A%E7%B1%B3%E7%A7%91%E6%8A%80mall4j",
 	"debugOptions": {
@@ -40,9 +56,34 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 23,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/orderList/orderList",
+					"pathName": "pages/orderList/orderList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/comment/index",
+					"pathName": "pages/comment/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"scene": null
+				}
+			]
 		}
 	}
 }

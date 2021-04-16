@@ -31,7 +31,7 @@ public interface OrderMapper extends BaseMapper<Order> {
 
     void cancelOrders(@Param("orders") List<Order> orders);
 
-    void confirmOrder(@Param("orders") List<Order> orders);
+    void confirmOrder(@Param("orders") List<Order> orders,@Param("status") Integer status);
 
     void updateByToPaySuccess(@Param("orderNumbers") List<String> orderNumbers, @Param("payType") Integer payType);
 

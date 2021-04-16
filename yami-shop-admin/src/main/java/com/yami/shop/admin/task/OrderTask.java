@@ -72,7 +72,7 @@ public class OrderTask {
         if (CollectionUtil.isEmpty(orders)) {
             return;
         }
-        orderService.confirmOrder(orders);
+        orderService.confirmOrder(orders,3);
         for (Order order : orders) {
             List<OrderItem> orderItems = order.getOrderItems();
             for (OrderItem orderItem : orderItems) {

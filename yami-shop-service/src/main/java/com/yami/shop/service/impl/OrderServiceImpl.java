@@ -154,8 +154,8 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void confirmOrder(List<Order> orders) {
-        orderMapper.confirmOrder(orders);
+    public void confirmOrder(List<Order> orders,Integer status) {
+        orderMapper.confirmOrder(orders,status);
         for (Order order : orders) {
             eventPublisher.publishEvent(new ReceiptOrderEvent(order));
         }

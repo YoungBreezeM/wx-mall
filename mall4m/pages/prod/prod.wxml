@@ -74,9 +74,10 @@
             <view class="cmt-user-info">
               <image class="user-img" src="{{item.pic}}"></image>
               <view class="nickname">{{item.nickName}}</view>
-              <van-rate readonly value="{{ item.score }}" bind:change="onChange" color="#f44" />
+              
             </view>
           </view>
+          <van-rate readonly value="{{ item.score }}" bind:change="onChange" color="#f44" />
           <view class="cmt-cnt">{{item.content}}</view>
           <scroll-view class="cmt-attr" scroll-x="true" wx:if="{{item.pics.length}}">
             <image src="{{commPic}}" wx:for='{{item.pics}}' wx:for-item="commPic" wx:key='*this'></image>

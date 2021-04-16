@@ -106,7 +106,8 @@ var getToken = function() {
 
 // 更新用户头像昵称
 function updateUserInfo() {
-  wx.getUserInfo({
+  wx.getUserProfile({
+    desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
     success: (res) => {
       var userInfo = JSON.parse(res.rawData)
       request({

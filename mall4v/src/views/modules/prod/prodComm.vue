@@ -73,6 +73,7 @@ export default {
           size: page == null ? this.page.pageSize : page.pageSize
         }, params))
       }).then(({ data }) => {
+        console.log(data)
         this.dataList = data.records
         this.page.total = data.total
         this.dataListLoading = false
